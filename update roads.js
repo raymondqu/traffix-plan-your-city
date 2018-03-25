@@ -7,7 +7,6 @@ function updateRoads(arr) {
 			
 				if (y != 0) {
 					if (arr[x][y-1].v == "Road") {
-						print('hee')
 						arr[x][y-1].down = true
 						current_road.up = true
 					}
@@ -21,40 +20,39 @@ function updateRoads(arr) {
 				} 
 				if (x !=  0) {
 					if (arr[x-1][y].v == "Road") {
-						arr[x-1][y].right == true
-						current_road.left == true
+						print('yoo')
+						arr[x-1][y].right = true
+						current_road.left = true
 					}
 				}
 				if (x != arr.length-1) {
 					if (arr[x+1][y].v == "Road") {
-						arr[x+1][y].left == true;
-						current_road.right == true;
+						arr[x+1][y].left = true;
+						current_road.right = true;
 					}
 				}
-
-
-
-
-	
-				if (current_road.up && current_road.down) {
+				if (current_road.up || current_road.down) {
+					print('hehe')
 					current_road.s = loadImage('sprites/vertical.png');
-				} else if (current_road.up && current_road.left) {
+				}  if (current_road.up && current_road.left) {
+					print('as')
 					current_road.s = loadImage('sprites/leftup.png');
-				} else if (current_road.down && current_road.left) {
+				}  if (current_road.down && current_road.left) {
 					current_road.s = loadImage('sprites/leftdown.png');
-				} else if (current_road.up && current_road.right) {
+				}  if (current_road.up && current_road.right) {
+					print('heck')
 					current_road.s = loadImage('sprites/rightup.png');
-				} else if (current_road.right && current_road.down) {
+				}  if (current_road.right && current_road.down) {
 					current_road.s = loadImage('sprites/rightdown.png');
-				} else if (current_road.left && current_road.right && current_road.down) {
+				}  if (current_road.left && current_road.right && current_road.down) {
 					current_road.s = loadImage('sprites/t-intersect - left right down.png');
-				} else if (current_road.up && current_road.left && current_road.down) {
+				}  if (current_road.up && current_road.left && current_road.down) {
 					current_road.s = loadImage('sprites/t-intersect - up left down.png');
-				} else if (current_road.up && current_road.right && current_road.down) {
+				}  if (current_road.up && current_road.right && current_road.down) {
 					current_road.s = loadImage('sprites/t-intersect - up right down.png');
-				} else if (current_road.up && current_road.left && current_road.right) {
+				}  if (current_road.up && current_road.left && current_road.right) {
 					current_road.s = loadImage('sprites/t-intersect - up left right.png');
-				} else if (current_road.up && current_road.down && current_road.left && current_road.right) {
+				}  if (current_road.up && current_road.down && current_road.left && current_road.right) {
 					current_road.s = loadImage('sprites/intersection.png');
 				}
 				
