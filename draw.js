@@ -1,11 +1,15 @@
 function setup() {
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   background(255);
-  forest = loadImage('forest.png')
-  blank = loadImage('blank.png')
+  forest = loadImage('forest.png');
+  blank = loadImage('blank.png');
+  building = loadImage('building.png');
+  
 }
 
 var forest;
+var blank;
+var building;
 
 window.onresize = function() {
   var w = window.innerWidth;
@@ -27,14 +31,22 @@ function grid(array, size){
         case 1:
           bloc = forest;
           break;
+        
       }
       image(bloc, i*size-viewX, j*size-viewY, size, size);
     } 
   }
 }
 
-function placeTab(){
-  
+var barHeight = 50;
+var tabHeight = 30;
+var tabWidth = 100;
+var topY = window.innerHeight-50;
+
+function placeBar(){
+  rect(0, topY, window.innerWidth, barHeight);
+  rect(0, topY-tabHeight, tabWidth, tabHeight);
+  rect(tabWidth, topY-tabHeight, tabWidth, tabHeight);
 }
 
 function blockInteract(){
@@ -110,7 +122,10 @@ function draw() {
   
   moveScreen();
   grid(arr, gridSize);
-  placeTab();
+  placeBar();
   blockInteract();
   
 }
+
+  
+  
