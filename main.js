@@ -23,8 +23,8 @@ function setup() {
   
   arr = gridInit(arrWidth, arrHeight);
 
-  dividedRoad = loadImage('sprites/leftrightroad.png');
-  bigRoad = loadImage('sprites/bigroad.png');
+  dividedRoad = loadImage('sprites/horizontal.png');
+  bigRoad = loadImage('sprites/horizontal.png');
 
   road = new Road(dividedRoad, 50);
 }
@@ -37,5 +37,5 @@ function draw() {
   blockInteract(arr);
   grid(arr, gridSize);
   placeBar();
-  updateRoads();
+  updateRoads(arr);
 }

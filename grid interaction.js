@@ -10,7 +10,7 @@ function blockInteract(arr) {
         if (placeMode == 'divided road') {
           arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(dividedRoad);
         } else if (placeMode == 'big road') {
-          road.s = loadImage('sprites/bigroad.png');
+          road.s = loadImage('sprites/horizontal.png');
           arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(bigRoad, false, false, false, false);
          
         }
