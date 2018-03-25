@@ -16,6 +16,7 @@ function gridInit(x, y) { //x represents the number of width grids, y represents
 window.onresize = function() {
   var w = window.innerWidth;
   var h = window.innerHeight;
+  topY = h-barHeight
   canvas.size(w, h);
   width = w;
   height = h;

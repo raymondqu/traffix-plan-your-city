@@ -9,6 +9,11 @@ var viewSpeed = 10;
 var arrWidth = 5;
 var arrHeight = 5;
 
+var dividedRoad;
+var bigRoad;
+
+var road;
+
 function setup() {
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   background(255);
@@ -17,7 +22,11 @@ function setup() {
   blank = new Blank(blank_image);
   
   arr = gridInit(arrWidth, arrHeight);
-  
+
+  dividedRoad = loadImage('sprites/dividedroad.png');
+  bigRoad = loadImage('sprites/bigroad.png');
+
+  road = new Road(dividedRoad, 50);
 }
 
 function draw() {
@@ -27,6 +36,6 @@ function draw() {
   moveScreen();
   blockInteract(arr);
   grid(arr, gridSize);
-  placeTab();
+  placeBar();
   
 }
