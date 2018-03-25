@@ -11,7 +11,7 @@ function blockInteract(arr) {
           arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(dividedRoad);
         } else if (placeMode == 'big road') {
           road.s = loadImage('sprites/bigroad.png');
-          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(bigRoad);
+          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(bigRoad, false, false, false, false);
          
         }
       }

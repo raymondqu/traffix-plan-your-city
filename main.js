@@ -23,7 +23,7 @@ function setup() {
   
   arr = gridInit(arrWidth, arrHeight);
 
-  dividedRoad = loadImage('sprites/dividedroad.png');
+  dividedRoad = loadImage('sprites/leftrightroad.png');
   bigRoad = loadImage('sprites/bigroad.png');
 
   road = new Road(dividedRoad, 50);
