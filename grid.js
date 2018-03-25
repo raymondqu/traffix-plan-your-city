@@ -1,25 +1,11 @@
-var car;
 var blank;
 
-function setup() {
-  canvas = createCanvas(window.innerWidth, window.innerHeight);
-  background(255);
-  forest_image = loadImage('sprites/car.png');
-  forest = new Blank(forest_image);
-  
-  blank_image = loadImage('blank.png');
-  blank = new Blank(blank_image);
-  
-  arr = gridInit();
-  
-}
-
-function gridInit() {
+function gridInit(x, y) { //x represents the number of width grids, y represents height grids
   var arr = [];
   
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < x; i++) {
     var arr2 = [];
-    for (var j = 0; j < 5; j++) {
+    for (var j = 0; j < y; j++) {
       arr2.push(blank);
     }
     arr.push(arr2);
@@ -59,7 +45,8 @@ function blockInteract(arr) {
   if (mouseIsPressed) {
     if (mouseButton == LEFT) {
       if (floor(x / gridSize) < arrWidth && floor(x / gridSize) >= 0 && floor(y / gridSize) < arrHeight && floor(y / gridSize) >= 0) {
-        arr[floor(x / gridSize)][floor(y / gridSize)] = forest;
+        //changes the object once it clicks
+        //arr[floor(x / gridSize)][floor(y / gridSize)] = forest;
       }
     }
   }
@@ -104,25 +91,3 @@ function moveScreen() {
   }
 }
 
-var gridSize = 100;
-var zoomSpeed = 10;
-
-var viewX = 0;
-var viewY = 0;
-
-var viewSpeed = 10;
-
-var arrWidth = 5;
-var arrHeight = 5;
-
-function draw() {
-
-  background(0);
-
-  moveScreen();
-  blockInteract(arr);
-  grid(arr, gridSize);
-  placeTab();
-  
-
-}

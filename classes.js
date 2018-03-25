@@ -15,3 +15,4 @@ function Buildings(is, ip) {
   this.s = is; // image
   this.p = iv; // population of the residential zone
 }
+
