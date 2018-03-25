@@ -1,4 +1,3 @@
-
 var gridSize = 100;
 var zoomSpeed = 10;
 
