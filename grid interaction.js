@@ -8,11 +8,12 @@ function blockInteract(arr) {
       if (floor(x / gridSize) < arrWidth && floor(x / gridSize) >= 0 && floor(y / gridSize) < arrHeight && floor(y / gridSize) >= 0) {
         //changes the object once it clicks
         if (placeMode == 'divided road') {
-          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(dividedRoad);
+          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(dividedRoad, false, false, false, false, "Road");
+          updateRoads(arr);
         } else if (placeMode == 'big road') {
           road.s = loadImage('sprites/horizontal.png');
-          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(bigRoad, false, false, false, false);
-         
+          arr[floor(x / gridSize)][floor(y / gridSize)] = new Road(bigRoad, false, false, false, false, "Road");
+          updateRoads(arr);
         }
       }
     }

@@ -37,5 +37,5 @@ function draw() {
   blockInteract(arr);
   grid(arr, gridSize);
   placeBar();
-  updateRoads(arr);
+  //updateRoads(arr);
 }
