@@ -20,7 +20,7 @@ function grid(array, size){
     for(var j = 0; j < arr[i].length; j++){
       
       //rect(i*size-viewX, j*size-viewY, size, size);
-      image(forest, i*size-viewX, j*size-viewY, size, size)
+      image(forest, i*size-viewX, j*size-viewY, size, size);
     } 
   }
 }
