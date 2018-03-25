@@ -1,22 +1,25 @@
-var bg;
-var y = 0;
+var game = true;
+var start = true;  // Declare variable 'img'.
+var play = false;
+var end = false;
 
 function setup() {
-  // The background image must be the same size as the parameters
-  // into the createCanvas() method. In this program, the size of
-  // the image is 720x400 pixels.
-  bg = loadImage("Wolfhacks/graphics/background/ending.png");
-  createCanvas(720, 400);
+  createCanvas(1280, 720);
+  start_img = loadImage("background/start.png");  // Load the image
+  play_img = loadImage("background/gameplay.png");
+  end_img = loadImage("background/ending.png");
 }
 
 function draw() {
-  background(bg);
-
-  stroke(226, 204, 0);
-  line(0, y, width, y);
-
-  y++;
-  if (y > height) {
-    y = 0;
+  // Displays the image at its actual size at point (0,0)
+  while (game){
+    while(start){
+      image(start_img, 0, 0);
+    }
+    while(play){
+      image(play_img, 0, 0);
+    }
   }
+
+  
 }
