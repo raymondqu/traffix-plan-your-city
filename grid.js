@@ -16,6 +16,7 @@ function gridInit(x, y) { //x represents the number of width grids, y represents
 window.onresize = function() {
   var w = window.innerWidth;
   var h = window.innerHeight;
+  topY = h-barHeight
   canvas.size(w, h);
   width = w;
   height = h;
@@ -32,28 +33,6 @@ function grid(array, size) {
     }
   }
 }
-
-
-function placeTab() {
-
-}
-
-function blockInteract(arr) {
-  var x = mouseX + viewX;
-  var y = mouseY + viewY;
-
-  if (mouseIsPressed) {
-    if (mouseButton == LEFT) {
-      if (floor(x / gridSize) < arrWidth && floor(x / gridSize) >= 0 && floor(y / gridSize) < arrHeight && floor(y / gridSize) >= 0) {
-        //changes the object once it clicks
-        //arr[floor(x / gridSize)][floor(y / gridSize)] = forest;
-      }
-    }
-  }
-
-}
-
-
 
 function mouseWheel(event) {
   if (event.delta > 0) {
