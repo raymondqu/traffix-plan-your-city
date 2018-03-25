@@ -6,8 +6,8 @@ var viewY = 0;
 
 var viewSpeed = 10;
 
-var arrWidth = 5;
-var arrHeight = 5;
+var arrWidth = 10;
+var arrHeight = 10;
 
 var dividedRoad;
 var bigRoad;
