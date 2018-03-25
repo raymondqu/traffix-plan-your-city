@@ -23,12 +23,28 @@ function updateRoads() {
 				}
 				if (x != arr.length()-1) {
 					if (arr[x+1][y] == road) {
-						arr[x+1][y].up == true
-						current_road.down == true
+						arr[x+1][y].up == true;
+						current_road.down == true;
 					}
 				}
-				if (current_road.up) {
-
+				if (current_road.up && current_road.down && current_road.left && current_road.right) {
+					current_road.s = loadImage('intersection.png');
+				} else if (current_road.up && current_road.left && current_road.right) {
+					current_road.s = loadImage('t-intersect - up left right.png');
+				} else if (current_road.up && current_road.right && current_road.down) {
+					current_road.s = loadImage('t-intersect - up right down.png');
+				} else if (current_road.up && current_road.left && current_road.down) {
+					current_road.s = loadImage('t-intersect - up left down.png');
+				} else if (current_road.left && current_road.right && current_road.down) {
+					current_road.s = loadImage('t-intersect - left right down.png');
+				} else if (current_road.right && current_road.down) {
+					current_road.s = loadImage('rightdown.png');
+				} else if (current_road.up && current_road.right) {
+					current_road.s = loadImage('rightup.png');
+				} else if (current_road.down && current_road.left) {
+					current_road.s = loadImage('leftdown.png');
+				} else if (current_road.up && current_road.left) {
+					current_road.s = loadImage('leftup.png');
 				}
 			left_road = arr[x][y-1]
 			right_road = arr[x][y+1]
