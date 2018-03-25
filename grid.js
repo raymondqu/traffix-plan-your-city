@@ -1,5 +1,3 @@
-var blank;
-
 function gridInit(x, y) { //x represents the number of width grids, y represents height grids
   var arr = [];
   
@@ -28,8 +26,16 @@ function grid(array, size) {
     for (var j = 0; j < array[i].length; j++) {
       var bloc;
       bloc = array[i][j]
-
       image(bloc.s, i * size - viewX, j * size - viewY, size, size);
+      if(score[i][j] > 0){
+        fill(score[i][j], 255-score[i][j], 0, 100)
+        rect(i * size - viewX, j * size - viewY, size, size);
+      }else{
+        fill(0, 255, 0, 0)
+      }
+      
+      //rect(i * size - viewX, j * size - viewY, size, size);
+      //image(squircle.s, i * size - viewX, j * size - viewY, size, size);
     }
   }
 }

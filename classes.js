@@ -11,8 +11,8 @@ function Road(is, iup, idown, ileft, iright, iv) {
   this.v = iv; // should be "Road"
 }
 
-function Buildings(is, ip) {
+function Building(is, ip) {
   this.s = is; // image
-  this.p = iv; // population of the residential zone
+  this.p = ip; // population of the residential zone
 }
 
