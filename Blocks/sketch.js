@@ -1,18 +1,21 @@
 var school;
 var car;
+var r1;
 
 function setup() {
   createCanvas(500, 500);
-  
-  car = loadImage('car.png');
-  school = new Blocks(car, 1);
+
 }
 
 function draw() {
-  image(school.s, 200, 200);
 }
 
-function Blocks(is, iv) {
+function Road(is, iv) {
   this.s = is; // image 
   this.v = iv; // "value" 
+}
+
+function Buildings(is, ip) {
+  this.s = is; // image
+  this.p = iv; // population of the residential zone
 }
