@@ -11,15 +11,26 @@ function setup() {
 }
 
 function draw() {
-  // Displays the image at its actual size at point (0,0)
-  while (game){
-    while(start){
-      image(start_img, 0, 0);
+//drawing different screens
+  if (game){
+    if(start){
+      image(start_img, 0 ,0);
+      if (mouseIsPressed){
+        play = true;
+        start = false;
+      }
     }
-    while(play){
+    else if(play){
       image(play_img, 0, 0);
+      if (mouseIsPressed){
+        play = false;
+        start = false;
+        end = true
+      }
+    }
+    else if (end){
+      image(end_img, 0, 0);
+      
     }
   }
-
-  
 }
