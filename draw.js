@@ -25,6 +25,16 @@ function grid(array, size){
   }
 }
 
+function placeTab(){
+  if(mouseIsPressed) {
+    
+  }
+}
+
+function blockInteract(){
+  
+}
+
 function mouseWheel(event) {
   if(event.delta > 0){
     gridSize += zoomSpeed;
@@ -79,6 +89,7 @@ function draw() {
   
   moveScreen();
   grid(arr, gridSize);
+  placeTab();
   
   
 }
