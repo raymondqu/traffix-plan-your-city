@@ -2,6 +2,7 @@ function setup() {
   canvas = createCanvas(window.innerWidth, window.innerHeight);
   background(255);
   forest = loadImage('forest.png')
+  blank = loadImage('blank.png')
 }
 
 var forest;
@@ -18,22 +19,39 @@ window.onresize = function() {
 function grid(array, size){
   for(var i = 0; i < arr.length; i++){
     for(var j = 0; j < arr[i].length; j++){
-      
-      //rect(i*size-viewX, j*size-viewY, size, size);
-      image(forest, i*size-viewX, j*size-viewY, size, size);
+      var bloc;
+      switch (arr[i][j]){
+        case 0:
+          bloc = blank;
+          break;
+        case 1:
+          bloc = forest;
+          break;
+      }
+      image(bloc, i*size-viewX, j*size-viewY, size, size);
     } 
   }
 }
 
 function placeTab(){
-  if(mouseIsPressed) {
-    
-  }
+  
 }
 
 function blockInteract(){
+  var x = mouseX+viewX;
+  var y = mouseY+viewY;
+  
+  if(mouseIsPressed) {
+    if(mouseButton == LEFT){
+      if(floor(x/gridSize) < arrWidth && floor(x/gridSize) >= 0 && floor(y/gridSize) < arrHeight && floor(y/gridSize) >= 0){
+          arr[floor(x/gridSize)][floor(y/gridSize)] = 1;
+      }
+    }
+  }
   
 }
+
+
 
 function mouseWheel(event) {
   if(event.delta > 0){
@@ -80,16 +98,19 @@ var viewY = 0;
 var viewSpeed = 10;
 
 var arr = [[0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0],
-           [0, 0, 0, 0, 0, 0],
+           [0, 1, 0, 0, 0, 0],
+           [0, 0, 1, 0, 0, 0],
+           [0, 0, 0, 1, 0, 0],
            [0, 0, 0, 0, 0, 0]];
+           
+var arrWidth = 5;
+var arrHeight = 5;
 
 function draw() {
   
   moveScreen();
   grid(arr, gridSize);
   placeTab();
-  
+  blockInteract();
   
 }
