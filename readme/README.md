@@ -3,3 +3,7 @@
 # @date 25/03/2018
 
 # Brought to life through p5.js.
+
+# Running it:
+	#Dowload the full package if p5.js.
+	#Run using the p5.js editor.
